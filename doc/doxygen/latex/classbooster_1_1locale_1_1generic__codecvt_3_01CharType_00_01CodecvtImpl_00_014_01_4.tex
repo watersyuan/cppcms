@@ -1,0 +1,69 @@
+\section{booster\+:\+:locale\+:\+:generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, 4 $>$ Class Template Reference}
+\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4}\index{booster\+::locale\+::generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, 4 $>$@{booster\+::locale\+::generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, 4 $>$}}
+
+
+U\+T\+F-\/32 to/from U\+T\+F-\/8 codecvt facet to use with char32\+\_\+t or wchar\+\_\+t on P\+O\+S\+IX platforms.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/generic\+\_\+codecvt.\+h$>$}
+
+Inheritance diagram for booster\+:\+:locale\+:\+:generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, 4 $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.485411cm]{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Char\+Type {\bfseries uchar}\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4_a11b6a3f5335c7318985b03264fc3668c}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries generic\+\_\+codecvt} (size\+\_\+t refs=0)\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4_a7c98962aaf58abc204cf5600c4e6cd5d}
+
+\item 
+Codecvt\+Impl const \& {\bfseries implementation} () const \label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4_a9ca277a779e374b940ca47a05fff3161}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::codecvt\+\_\+base\+::result {\bfseries do\+\_\+unshift} (std\+::mbstate\+\_\+t \&, char $\ast$from, char $\ast$, char $\ast$\&next) const \label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4_add4e987d2099dd2a8e05fe7574ba65d9}
+
+\item 
+virtual int {\bfseries do\+\_\+encoding} () const   throw ()\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4_aba4178c455c4bcc62433d94629a266fd}
+
+\item 
+virtual int {\bfseries do\+\_\+max\+\_\+length} () const   throw ()\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4_a0227e40c0c81c71742a957d7196cf88b}
+
+\item 
+virtual bool {\bfseries do\+\_\+always\+\_\+noconv} () const   throw ()\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4_ae3aac0c764056c527452180b5a30baf0}
+
+\item 
+virtual int {\bfseries do\+\_\+length} (std\+::mbstate\+\_\+t \&, char const $\ast$from, char const $\ast$from\+\_\+end, size\+\_\+t max) const \label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4_a589035eebecf678715d6ffd4af507ed1}
+
+\item 
+virtual std\+::codecvt\+\_\+base\+::result {\bfseries do\+\_\+in} (std\+::mbstate\+\_\+t \&, char const $\ast$from, char const $\ast$from\+\_\+end, char const $\ast$\&from\+\_\+next, uchar $\ast$to, uchar $\ast$to\+\_\+end, uchar $\ast$\&to\+\_\+next) const \label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4_a3fc0c5c947d65608b96e6f7b3307f37a}
+
+\item 
+virtual std\+::codecvt\+\_\+base\+::result {\bfseries do\+\_\+out} (std\+::mbstate\+\_\+t \&, uchar const $\ast$from, uchar const $\ast$from\+\_\+end, uchar const $\ast$\&from\+\_\+next, char $\ast$to, char $\ast$to\+\_\+end, char $\ast$\&to\+\_\+next) const \label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_014_01_4_af47fee7bb55db2c95a6e0df8ad8d1e8d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Char\+Type, typename Codecvt\+Impl$>$\\*
+class booster\+::locale\+::generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, 4 $>$}
+
+U\+T\+F-\/32 to/from U\+T\+F-\/8 codecvt facet to use with char32\+\_\+t or wchar\+\_\+t on P\+O\+S\+IX platforms. 
+
+Its member functions implement standard virtual functions of basic codecvt. mbstate\+\_\+t is not used for U\+T\+F-\/32 handling due to fixed length encoding 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+booster/locale/generic\+\_\+codecvt.\+h\end{DoxyCompactItemize}

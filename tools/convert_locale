@@ -1,0 +1,44 @@
+#!/bin/bash  -x
+
+rm -fr boost_locale_git boost_locale
+git clone https://github.com/boostorg/locale.git boost_locale_git
+mkdir -p boost_locale/libs/locale
+mv boost_locale_git/include/boost boost_locale/
+mv boost_locale_git/src/ boost_locale/libs/locale/
+mv boost_locale_git/test/ boost_locale/libs/locale/
+
+
+rm -fr root
+mkdir root
+cp boost_locale/boost/locale.hpp root/localization.h
+cd boost_locale/boost/locale/
+for x in *.hpp
+do
+
+	cp $x ../../../root/locale_${x%.hpp}.h
+done
+
+cd ../../libs/locale/src
+
+for x in *.cpp *.hpp
+do
+	cp $x ../../../../root/locale_src_$x
+done
+
+cd ../test/
+
+for x in *.cpp *.hpp
+do
+	cp $x ../../../../root/locale_src_$x
+done
+
+cd ../../../../root
+
+for x in *.h *.cpp *.hpp
+do
+	cat $x | ../rename_locale.py | ../conv.py >tmp.txt
+	cp tmp.txt $x;
+	rm tmp.txt
+done
+
+rm locale_config.h

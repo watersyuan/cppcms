@@ -1,0 +1,65 @@
+\section{booster\+:\+:locale\+:\+:conv Namespace Reference}
+\label{namespacebooster_1_1locale_1_1conv}\index{booster\+::locale\+::conv@{booster\+::locale\+::conv}}
+
+
+Namespace that contains all functions related to character set conversion.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf conversion\+\_\+error}
+\begin{DoxyCompactList}\small\item\em The excepton that is thrown in case of conversion error. \end{DoxyCompactList}\item 
+class {\bf invalid\+\_\+charset\+\_\+error}
+\begin{DoxyCompactList}\small\item\em This exception is thrown in case of use of unsupported or invalid character set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf method\+\_\+type} \{ {\bf skip} = 0, 
+{\bf stop} = 1, 
+{\bf default\+\_\+method} = skip
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf to\+\_\+utf} (char const $\ast$begin, char const $\ast$end, std\+::string const \&charset, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf from\+\_\+utf} (Char\+Type const $\ast$begin, Char\+Type const $\ast$end, std\+::string const \&charset, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf to\+\_\+utf} (char const $\ast$begin, char const $\ast$end, std\+::locale const \&loc, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf from\+\_\+utf} (Char\+Type const $\ast$begin, Char\+Type const $\ast$end, std\+::locale const \&loc, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf to\+\_\+utf} (std\+::string const \&text, std\+::string const \&charset, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf from\+\_\+utf} (std\+::basic\+\_\+string$<$ Char\+Type $>$ const \&text, std\+::string const \&charset, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf to\+\_\+utf} (char const $\ast$text, std\+::string const \&charset, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf from\+\_\+utf} (Char\+Type const $\ast$text, std\+::string const \&charset, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf to\+\_\+utf} (std\+::string const \&text, std\+::locale const \&loc, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf from\+\_\+utf} (std\+::basic\+\_\+string$<$ Char\+Type $>$ const \&text, std\+::locale const \&loc, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf to\+\_\+utf} (char const $\ast$text, std\+::locale const \&loc, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf from\+\_\+utf} (Char\+Type const $\ast$text, std\+::locale const \&loc, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+B\+O\+O\+S\+T\+E\+R\+\_\+\+A\+PI std\+::string {\bf between} (char const $\ast$begin, char const $\ast$end, std\+::string const \&to\+\_\+encoding, std\+::string const \&from\+\_\+encoding, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+std\+::string {\bf between} (char const $\ast$text, std\+::string const \&to\+\_\+encoding, std\+::string const \&from\+\_\+encoding, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+std\+::string {\bf between} (std\+::string const \&text, std\+::string const \&to\+\_\+encoding, std\+::string const \&from\+\_\+encoding, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Out , typename Char\+In $>$ }\\std\+::basic\+\_\+string$<$ Char\+Out $>$ {\bf utf\+\_\+to\+\_\+utf} (Char\+In const $\ast$begin, Char\+In const $\ast$end, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Out , typename Char\+In $>$ }\\std\+::basic\+\_\+string$<$ Char\+Out $>$ {\bf utf\+\_\+to\+\_\+utf} (Char\+In const $\ast$str, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\item 
+{\footnotesize template$<$typename Char\+Out , typename Char\+In $>$ }\\std\+::basic\+\_\+string$<$ Char\+Out $>$ {\bf utf\+\_\+to\+\_\+utf} (std\+::basic\+\_\+string$<$ Char\+In $>$ const \&str, {\bf method\+\_\+type} how={\bf default\+\_\+method})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Namespace that contains all functions related to character set conversion. 

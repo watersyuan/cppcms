@@ -1,0 +1,322 @@
+\section{Character conversion functions}
+\label{group__codepage}\index{Character conversion functions@{Character conversion functions}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf booster\+::locale\+::conv\+::conversion\+\_\+error}
+\begin{DoxyCompactList}\small\item\em The excepton that is thrown in case of conversion error. \end{DoxyCompactList}\item 
+class {\bf booster\+::locale\+::conv\+::invalid\+\_\+charset\+\_\+error}
+\begin{DoxyCompactList}\small\item\em This exception is thrown in case of use of unsupported or invalid character set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf booster\+::locale\+::conv\+::method\+\_\+type} \{ {\bf booster\+::locale\+::conv\+::skip} = 0, 
+{\bf booster\+::locale\+::conv\+::stop} = 1, 
+{\bf booster\+::locale\+::conv\+::default\+\_\+method} = skip
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf booster\+::locale\+::conv\+::to\+\_\+utf} (char const $\ast$begin, char const $\ast$end, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf booster\+::locale\+::conv\+::from\+\_\+utf} (Char\+Type const $\ast$begin, Char\+Type const $\ast$end, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf booster\+::locale\+::conv\+::to\+\_\+utf} (char const $\ast$begin, char const $\ast$end, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf booster\+::locale\+::conv\+::from\+\_\+utf} (Char\+Type const $\ast$begin, Char\+Type const $\ast$end, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf booster\+::locale\+::conv\+::to\+\_\+utf} (std\+::string const \&text, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf booster\+::locale\+::conv\+::from\+\_\+utf} (std\+::basic\+\_\+string$<$ Char\+Type $>$ const \&text, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf booster\+::locale\+::conv\+::to\+\_\+utf} (char const $\ast$text, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf booster\+::locale\+::conv\+::from\+\_\+utf} (Char\+Type const $\ast$text, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf booster\+::locale\+::conv\+::to\+\_\+utf} (std\+::string const \&text, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf booster\+::locale\+::conv\+::from\+\_\+utf} (std\+::basic\+\_\+string$<$ Char\+Type $>$ const \&text, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::basic\+\_\+string$<$ Char\+Type $>$ {\bf booster\+::locale\+::conv\+::to\+\_\+utf} (char const $\ast$text, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\std\+::string {\bf booster\+::locale\+::conv\+::from\+\_\+utf} (Char\+Type const $\ast$text, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)
+\item 
+B\+O\+O\+S\+T\+E\+R\+\_\+\+A\+PI std\+::string {\bf booster\+::locale\+::conv\+::between} (char const $\ast$begin, char const $\ast$end, std\+::string const \&to\+\_\+encoding, std\+::string const \&from\+\_\+encoding, method\+\_\+type how=default\+\_\+method)
+\item 
+std\+::string {\bf booster\+::locale\+::conv\+::between} (char const $\ast$text, std\+::string const \&to\+\_\+encoding, std\+::string const \&from\+\_\+encoding, method\+\_\+type how=default\+\_\+method)
+\item 
+std\+::string {\bf booster\+::locale\+::conv\+::between} (std\+::string const \&text, std\+::string const \&to\+\_\+encoding, std\+::string const \&from\+\_\+encoding, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Out , typename Char\+In $>$ }\\std\+::basic\+\_\+string$<$ Char\+Out $>$ {\bf booster\+::locale\+::conv\+::utf\+\_\+to\+\_\+utf} (Char\+In const $\ast$begin, Char\+In const $\ast$end, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Out , typename Char\+In $>$ }\\std\+::basic\+\_\+string$<$ Char\+Out $>$ {\bf booster\+::locale\+::conv\+::utf\+\_\+to\+\_\+utf} (Char\+In const $\ast$str, method\+\_\+type how=default\+\_\+method)
+\item 
+{\footnotesize template$<$typename Char\+Out , typename Char\+In $>$ }\\std\+::basic\+\_\+string$<$ Char\+Out $>$ {\bf booster\+::locale\+::conv\+::utf\+\_\+to\+\_\+utf} (std\+::basic\+\_\+string$<$ Char\+In $>$ const \&str, method\+\_\+type how=default\+\_\+method)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Enumeration Type Documentation}
+\index{Character conversion functions@{Character conversion functions}!method\+\_\+type@{method\+\_\+type}}
+\index{method\+\_\+type@{method\+\_\+type}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{method\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\+::locale\+::conv\+::method\+\_\+type}}\label{group__codepage_ga29f11d96dbc042d8bb27917969f480ea}
+enum that defines conversion policy \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{skip@{skip}!Character conversion functions@{Character conversion functions}}\index{Character conversion functions@{Character conversion functions}!skip@{skip}}\item[{\em 
+skip\label{group__codepage_gga29f11d96dbc042d8bb27917969f480eaa19e2bc810b9f966c8898b912cb147284}
+}]Skip illegal/unconvertable characters. \index{stop@{stop}!Character conversion functions@{Character conversion functions}}\index{Character conversion functions@{Character conversion functions}!stop@{stop}}\item[{\em 
+stop\label{group__codepage_gga29f11d96dbc042d8bb27917969f480eaa0072564714f69c613ee79f58729ea4ad}
+}]Stop conversion and throw \doxyref{conversion\+\_\+error}{p.}{classbooster_1_1locale_1_1conv_1_1conversion__error}. \index{default\+\_\+method@{default\+\_\+method}!Character conversion functions@{Character conversion functions}}\index{Character conversion functions@{Character conversion functions}!default\+\_\+method@{default\+\_\+method}}\item[{\em 
+default\+\_\+method\label{group__codepage_gga29f11d96dbc042d8bb27917969f480eaa2c54fe09a179d78b4bc7942a9490a22b}
+}]Default method -\/ skip. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{Character conversion functions@{Character conversion functions}!between@{between}}
+\index{between@{between}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{between(char const $\ast$begin, char const $\ast$end, std\+::string const \&to\+\_\+encoding, std\+::string const \&from\+\_\+encoding, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}B\+O\+O\+S\+T\+E\+R\+\_\+\+A\+PI std\+::string booster\+::locale\+::conv\+::between (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{std\+::string const \&}]{to\+\_\+encoding, }
+\item[{std\+::string const \&}]{from\+\_\+encoding, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_ga046b9d4c45429d7cec2576c502af0eed}
+Convert a text in range [begin,end) to {\itshape to\+\_\+encoding} from {\itshape from\+\_\+encoding} 
+
+Referenced by booster\+::locale\+::conv\+::between(), and booster\+::locale\+::conv\+::from\+\_\+utf().
+
+\index{Character conversion functions@{Character conversion functions}!between@{between}}
+\index{between@{between}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{between(char const $\ast$text, std\+::string const \&to\+\_\+encoding, std\+::string const \&from\+\_\+encoding, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string booster\+::locale\+::conv\+::between (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{text, }
+\item[{std\+::string const \&}]{to\+\_\+encoding, }
+\item[{std\+::string const \&}]{from\+\_\+encoding, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__codepage_ga8c4a745c87d7281183f64bca342c038e}
+Convert a {\itshape text} to {\itshape to\+\_\+encoding} from {\itshape from\+\_\+encoding} 
+
+References booster\+::locale\+::conv\+::between().
+
+\index{Character conversion functions@{Character conversion functions}!between@{between}}
+\index{between@{between}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{between(std\+::string const \&text, std\+::string const \&to\+\_\+encoding, std\+::string const \&from\+\_\+encoding, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string booster\+::locale\+::conv\+::between (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{text, }
+\item[{std\+::string const \&}]{to\+\_\+encoding, }
+\item[{std\+::string const \&}]{from\+\_\+encoding, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__codepage_gac6b2b294d6a947c0d6e10577f8544e21}
+Convert a {\itshape text} to {\itshape to\+\_\+encoding} from {\itshape from\+\_\+encoding} 
+
+References booster\+::locale\+::conv\+::between(), booster\+::locale\+::conv\+::from\+\_\+utf(), and booster\+::locale\+::conv\+::to\+\_\+utf().
+
+\index{Character conversion functions@{Character conversion functions}!from\+\_\+utf@{from\+\_\+utf}}
+\index{from\+\_\+utf@{from\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{from\+\_\+utf(\+Char\+Type const $\ast$begin, Char\+Type const $\ast$end, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::string booster\+::locale\+::conv\+::from\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{Char\+Type const $\ast$}]{begin, }
+\item[{Char\+Type const $\ast$}]{end, }
+\item[{std\+::string const \&}]{charset, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_gab15041ef29f9c20b5f823514ad4ab53d}
+convert U\+TF text in range [begin,end) to a text encoded with {\itshape charset} according to policy {\itshape how} 
+
+Referenced by booster\+::locale\+::conv\+::between(), and booster\+::locale\+::conv\+::from\+\_\+utf().
+
+\index{Character conversion functions@{Character conversion functions}!from\+\_\+utf@{from\+\_\+utf}}
+\index{from\+\_\+utf@{from\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{from\+\_\+utf(\+Char\+Type const $\ast$begin, Char\+Type const $\ast$end, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::string booster\+::locale\+::conv\+::from\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{Char\+Type const $\ast$}]{begin, }
+\item[{Char\+Type const $\ast$}]{end, }
+\item[{std\+::locale const \&}]{loc, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_ga88c771955206ba89c6d62a61acd0c9cf}
+convert U\+TF text in range [begin,end) to a text encoded according to locale {\itshape loc} according to policy {\itshape how} 
+
+\begin{DoxyNote}{Note}
+throws std\+::bad\+\_\+cast if the loc does not have \doxyref{info}{p.}{classbooster_1_1locale_1_1info} facet installed 
+\end{DoxyNote}
+
+
+References booster\+::locale\+::conv\+::from\+\_\+utf().
+
+\index{Character conversion functions@{Character conversion functions}!from\+\_\+utf@{from\+\_\+utf}}
+\index{from\+\_\+utf@{from\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{from\+\_\+utf(std\+::basic\+\_\+string$<$ Char\+Type $>$ const \&text, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::string booster\+::locale\+::conv\+::from\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{std\+::basic\+\_\+string$<$ Char\+Type $>$ const \&}]{text, }
+\item[{std\+::string const \&}]{charset, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_gafc3ee012333aaabb52339c497e61b389}
+Convert a {\itshape text} from {\itshape charset} to U\+TF string 
+
+References booster\+::locale\+::conv\+::from\+\_\+utf().
+
+\index{Character conversion functions@{Character conversion functions}!from\+\_\+utf@{from\+\_\+utf}}
+\index{from\+\_\+utf@{from\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{from\+\_\+utf(\+Char\+Type const $\ast$text, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::string booster\+::locale\+::conv\+::from\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{Char\+Type const $\ast$}]{text, }
+\item[{std\+::string const \&}]{charset, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_ga38f1d40bc4cc04998bcc50c166baa50b}
+Convert a {\itshape text} from U\+TF to {\itshape charset} 
+
+References booster\+::locale\+::conv\+::from\+\_\+utf().
+
+\index{Character conversion functions@{Character conversion functions}!from\+\_\+utf@{from\+\_\+utf}}
+\index{from\+\_\+utf@{from\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{from\+\_\+utf(std\+::basic\+\_\+string$<$ Char\+Type $>$ const \&text, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::string booster\+::locale\+::conv\+::from\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{std\+::basic\+\_\+string$<$ Char\+Type $>$ const \&}]{text, }
+\item[{std\+::locale const \&}]{loc, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_gab7cfd01bef6df3539be8f5f633269dcf}
+Convert a {\itshape text} in U\+TF to locale encoding given by {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\+::bad\+\_\+cast if the loc does not have \doxyref{info}{p.}{classbooster_1_1locale_1_1info} facet installed 
+\end{DoxyNote}
+
+
+References booster\+::locale\+::conv\+::from\+\_\+utf().
+
+\index{Character conversion functions@{Character conversion functions}!from\+\_\+utf@{from\+\_\+utf}}
+\index{from\+\_\+utf@{from\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{from\+\_\+utf(\+Char\+Type const $\ast$text, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::string booster\+::locale\+::conv\+::from\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{Char\+Type const $\ast$}]{text, }
+\item[{std\+::locale const \&}]{loc, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_ga6744947f24a3f0b45f15afb7c3a6bd88}
+Convert a {\itshape text} in U\+TF to locale encoding given by {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\+::bad\+\_\+cast if the loc does not have \doxyref{info}{p.}{classbooster_1_1locale_1_1info} facet installed 
+\end{DoxyNote}
+
+
+References booster\+::locale\+::conv\+::between(), booster\+::locale\+::conv\+::default\+\_\+method, and booster\+::locale\+::conv\+::from\+\_\+utf().
+
+\index{Character conversion functions@{Character conversion functions}!to\+\_\+utf@{to\+\_\+utf}}
+\index{to\+\_\+utf@{to\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{to\+\_\+utf(char const $\ast$begin, char const $\ast$end, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::basic\+\_\+string$<$Char\+Type$>$ booster\+::locale\+::conv\+::to\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{std\+::string const \&}]{charset, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_ga893416a6f2222f09659e75b1aa1c9df4}
+convert string to U\+TF string from text in range [begin,end) encoded with {\itshape charset} according to policy {\itshape how} 
+
+Referenced by booster\+::locale\+::conv\+::between().
+
+\index{Character conversion functions@{Character conversion functions}!to\+\_\+utf@{to\+\_\+utf}}
+\index{to\+\_\+utf@{to\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{to\+\_\+utf(char const $\ast$begin, char const $\ast$end, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::basic\+\_\+string$<$Char\+Type$>$ booster\+::locale\+::conv\+::to\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{std\+::locale const \&}]{loc, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_gafb54f1baada3eec0380b29c108d55fc9}
+convert string to U\+TF string from text in range [begin,end) encoded according to locale {\itshape loc} according to policy {\itshape how} 
+
+\begin{DoxyNote}{Note}
+throws std\+::bad\+\_\+cast if the loc does not have \doxyref{info}{p.}{classbooster_1_1locale_1_1info} facet installed 
+\end{DoxyNote}
+\index{Character conversion functions@{Character conversion functions}!to\+\_\+utf@{to\+\_\+utf}}
+\index{to\+\_\+utf@{to\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{to\+\_\+utf(std\+::string const \&text, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::basic\+\_\+string$<$Char\+Type$>$ booster\+::locale\+::conv\+::to\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{text, }
+\item[{std\+::string const \&}]{charset, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_ga12498147167bc7c7747186658d16135e}
+convert a string {\itshape text} encoded with {\itshape charset} to U\+TF string \index{Character conversion functions@{Character conversion functions}!to\+\_\+utf@{to\+\_\+utf}}
+\index{to\+\_\+utf@{to\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{to\+\_\+utf(char const $\ast$text, std\+::string const \&charset, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::basic\+\_\+string$<$Char\+Type$>$ booster\+::locale\+::conv\+::to\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{text, }
+\item[{std\+::string const \&}]{charset, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_ga825c6df9ca66069c1f604d43f593ce71}
+Convert a {\itshape text} from {\itshape charset} to U\+TF string \index{Character conversion functions@{Character conversion functions}!to\+\_\+utf@{to\+\_\+utf}}
+\index{to\+\_\+utf@{to\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{to\+\_\+utf(std\+::string const \&text, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::basic\+\_\+string$<$Char\+Type$>$ booster\+::locale\+::conv\+::to\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{text, }
+\item[{std\+::locale const \&}]{loc, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_gaa8229a4a5fbd62d46455bfba187176d6}
+Convert a {\itshape text} in locale encoding given by {\itshape loc} to U\+TF
+
+\begin{DoxyNote}{Note}
+throws std\+::bad\+\_\+cast if the loc does not have \doxyref{info}{p.}{classbooster_1_1locale_1_1info} facet installed 
+\end{DoxyNote}
+\index{Character conversion functions@{Character conversion functions}!to\+\_\+utf@{to\+\_\+utf}}
+\index{to\+\_\+utf@{to\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{to\+\_\+utf(char const $\ast$text, std\+::locale const \&loc, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Type $>$ std\+::basic\+\_\+string$<$Char\+Type$>$ booster\+::locale\+::conv\+::to\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{text, }
+\item[{std\+::locale const \&}]{loc, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_ga2399eeeb42b36926abcc4c3d2a47578e}
+Convert a {\itshape text} in locale encoding given by {\itshape loc} to U\+TF
+
+\begin{DoxyNote}{Note}
+throws std\+::bad\+\_\+cast if the loc does not have \doxyref{info}{p.}{classbooster_1_1locale_1_1info} facet installed 
+\end{DoxyNote}
+\index{Character conversion functions@{Character conversion functions}!utf\+\_\+to\+\_\+utf@{utf\+\_\+to\+\_\+utf}}
+\index{utf\+\_\+to\+\_\+utf@{utf\+\_\+to\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{utf\+\_\+to\+\_\+utf(\+Char\+In const $\ast$begin, Char\+In const $\ast$end, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Out , typename Char\+In $>$ std\+::basic\+\_\+string$<$Char\+Out$>$ booster\+::locale\+::conv\+::utf\+\_\+to\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{Char\+In const $\ast$}]{begin, }
+\item[{Char\+In const $\ast$}]{end, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_gadf9370318223b9cfcb3d73d31c617576}
+Convert a Unicode text in range [begin,end) to other Unicode encoding 
+
+References booster\+::locale\+::utf\+::illegal, booster\+::locale\+::utf\+::incomplete, and booster\+::locale\+::conv\+::stop.
+
+\index{Character conversion functions@{Character conversion functions}!utf\+\_\+to\+\_\+utf@{utf\+\_\+to\+\_\+utf}}
+\index{utf\+\_\+to\+\_\+utf@{utf\+\_\+to\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{utf\+\_\+to\+\_\+utf(\+Char\+In const $\ast$str, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Out , typename Char\+In $>$ std\+::basic\+\_\+string$<$Char\+Out$>$ booster\+::locale\+::conv\+::utf\+\_\+to\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{Char\+In const $\ast$}]{str, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_ga7dd92989e771789eb008e126479dbcdb}
+Convert a Unicode N\+UL terminated string {\itshape str} other Unicode encoding \index{Character conversion functions@{Character conversion functions}!utf\+\_\+to\+\_\+utf@{utf\+\_\+to\+\_\+utf}}
+\index{utf\+\_\+to\+\_\+utf@{utf\+\_\+to\+\_\+utf}!Character conversion functions@{Character conversion functions}}
+\subsubsection[{utf\+\_\+to\+\_\+utf(std\+::basic\+\_\+string$<$ Char\+In $>$ const \&str, method\+\_\+type how=default\+\_\+method)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\+Out , typename Char\+In $>$ std\+::basic\+\_\+string$<$Char\+Out$>$ booster\+::locale\+::conv\+::utf\+\_\+to\+\_\+utf (
+\begin{DoxyParamCaption}
+\item[{std\+::basic\+\_\+string$<$ Char\+In $>$ const \&}]{str, }
+\item[{{\bf method\+\_\+type}}]{how = {\ttfamily {\bf default\+\_\+method}}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_gaa99dcc6db792bfa4fa58134a303fb3da}
+Convert a Unicode string {\itshape str} other Unicode encoding 

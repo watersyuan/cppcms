@@ -1,0 +1,71 @@
+\section{booster\+:\+:locale\+:\+:generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, 2 $>$ Class Template Reference}
+\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4}\index{booster\+::locale\+::generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, 2 $>$@{booster\+::locale\+::generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, 2 $>$}}
+
+
+U\+T\+F-\/16 to/from U\+T\+F-\/8 codecvt facet to use with char16\+\_\+t or wchar\+\_\+t on Windows.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/generic\+\_\+codecvt.\+h$>$}
+
+Inheritance diagram for booster\+:\+:locale\+:\+:generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, 2 $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.485411cm]{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Char\+Type {\bfseries uchar}\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4_a206e745dba14f5ba7f22f33eb446cd3c}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries generic\+\_\+codecvt} (size\+\_\+t refs=0)\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4_a13c8a4a3b097d6d7b236d79cf084d8b5}
+
+\item 
+Codecvt\+Impl const \& {\bfseries implementation} () const \label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4_ae4330c80da48da33b07ab08f3be99881}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::codecvt\+\_\+base\+::result {\bfseries do\+\_\+unshift} (std\+::mbstate\+\_\+t \&s, char $\ast$from, char $\ast$, char $\ast$\&next) const \label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4_ac229b7b228bb3e6254ce32f538e8ef0f}
+
+\item 
+virtual int {\bfseries do\+\_\+encoding} () const   throw ()\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4_a7b264499fd7e204121b1d42c7a13c4b6}
+
+\item 
+virtual int {\bfseries do\+\_\+max\+\_\+length} () const   throw ()\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4_a0e8a98fbf8d36331f98c66575aee7115}
+
+\item 
+virtual bool {\bfseries do\+\_\+always\+\_\+noconv} () const   throw ()\label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4_ab0f0b4d26cece69ee7858ce129322f1a}
+
+\item 
+virtual int {\bfseries do\+\_\+length} (std\+::mbstate\+\_\+t \&std\+\_\+state, char const $\ast$from, char const $\ast$from\+\_\+end, size\+\_\+t max) const \label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4_aae2712941bdf422f8edf8496fe08384a}
+
+\item 
+virtual std\+::codecvt\+\_\+base\+::result {\bfseries do\+\_\+in} (std\+::mbstate\+\_\+t \&std\+\_\+state, char const $\ast$from, char const $\ast$from\+\_\+end, char const $\ast$\&from\+\_\+next, uchar $\ast$to, uchar $\ast$to\+\_\+end, uchar $\ast$\&to\+\_\+next) const \label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4_afd50d49b70aa1e6f23e6f57db6ab9179}
+
+\item 
+virtual std\+::codecvt\+\_\+base\+::result {\bfseries do\+\_\+out} (std\+::mbstate\+\_\+t \&std\+\_\+state, uchar const $\ast$from, uchar const $\ast$from\+\_\+end, uchar const $\ast$\&from\+\_\+next, char $\ast$to, char $\ast$to\+\_\+end, char $\ast$\&to\+\_\+next) const \label{classbooster_1_1locale_1_1generic__codecvt_3_01CharType_00_01CodecvtImpl_00_012_01_4_a536966574cbfa153764202c35f740d7f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Char\+Type, typename Codecvt\+Impl$>$\\*
+class booster\+::locale\+::generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, 2 $>$}
+
+U\+T\+F-\/16 to/from U\+T\+F-\/8 codecvt facet to use with char16\+\_\+t or wchar\+\_\+t on Windows. 
+
+Note in order to fit the requirements of usability by std\+::wfstream it uses mbstate\+\_\+t to handle intermediate states in handling of variable length U\+T\+F-\/16 sequences
+
+Its member functions implement standard virtual functions of basic codecvt 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+booster/locale/generic\+\_\+codecvt.\+h\end{DoxyCompactItemize}

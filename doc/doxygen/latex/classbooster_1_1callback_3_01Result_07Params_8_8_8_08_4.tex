@@ -1,0 +1,138 @@
+\section{booster\+:\+:callback$<$ Result(Params...)$>$ Class Template Reference}
+\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4}\index{booster\+::callback$<$ Result(\+Params...)$>$@{booster\+::callback$<$ Result(\+Params...)$>$}}
+
+
+This is Booster\textquotesingle{}s implementation of std\+::tr1\+::callback/booster\+::callback.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/callback.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf callable\+\_\+impl}
+\item 
+struct {\bf callable\+\_\+impl$<$ void, F $>$}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Result {\bfseries result\+\_\+type}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_ac2a710604dbf22edf06ccab4e8fffb20}
+
+\item 
+typedef {\bf callable}$<$ Result(Params...)$>$ {\bfseries callable\+\_\+type}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a70891f5d4a2296ace31ba2ca697ff932}
+
+\item 
+typedef {\bf intrusive\+\_\+ptr}$<$ {\bf callable\+\_\+type} $>$ {\bf pointer\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf callback} ()
+\item 
+{\footnotesize template$<$typename Call $>$ }\\{\bfseries callback} ({\bf intrusive\+\_\+ptr}$<$ Call $>$ c)\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a1413b20da6de3bebc7b0e5bc67f85632}
+
+\item 
+{\footnotesize template$<$typename Call $>$ }\\{\bfseries callback} (std\+::unique\+\_\+ptr$<$ Call $>$ ptr)\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_ae3f8d6b0da468a736007359a5ee962ab}
+
+\item 
+{\footnotesize template$<$typename Call $>$ }\\{\bf callback} const \& {\bfseries operator=} ({\bf intrusive\+\_\+ptr}$<$ Call $>$ c)\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a942fc8a4c93a7c737835656fba58af6e}
+
+\item 
+{\footnotesize template$<$typename Call $>$ }\\{\bf callback} const \& {\bfseries operator=} (std\+::unique\+\_\+ptr$<$ Call $>$ c)\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a6bc4f30c9229bc3f390bbd79760a0d1c}
+
+\item 
+{\footnotesize template$<$typename F $>$ }\\{\bfseries callback} (F func)\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_ac222ac49bf4e166e80e5378ebd4989aa}
+
+\item 
+{\bfseries callback} ({\bf callback} const \&other)\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a7652f092533298870d5f714005c5a0a2}
+
+\item 
+{\bfseries callback} ({\bf callback} \&\&other)\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_ab869fe0c37684c354a252bd5b96f5b93}
+
+\item 
+{\footnotesize template$<$typename F $>$ }\\{\bf callback} const \& {\bfseries operator=} (F func)\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_af15f7842f37bbd07bb6bbc25968d5501}
+
+\item 
+{\bf callback} \& {\bfseries operator=} ({\bf callback} \&\&other)\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a64a1e37a0bae921b2018b4f787d6698c}
+
+\item 
+{\bf callback} const \& {\bfseries operator=} ({\bf callback} const \&other)\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a5647e0e4491a0fd4120aa47e49589b70}
+
+\item 
+Result {\bfseries operator()} (Params...\+args) const \label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_ab374a6e20bec5d43829fa308ed439083}
+
+\item 
+bool {\bf empty} () const 
+\item 
+{\bf operator bool} () const 
+\item 
+void {\bfseries swap} ({\bf callback} \&other)\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a900e3aae42c5d48f1b4ef97d529118d7}
+
+\item 
+{\bf pointer\+\_\+type} const \& {\bfseries get\+\_\+pointer} () const \label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_acb80da60f48b1352a245bb60606fe2bb}
+
+\item 
+{\bf pointer\+\_\+type} \& {\bfseries get\+\_\+pointer} ()\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_aec7cf6efabd0dc69615c40ecdd07703c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Result, typename... Params$>$\\*
+class booster\+::callback$<$ Result(\+Params...)$>$}
+
+This is Booster\textquotesingle{}s implementation of std\+::tr1\+::callback/booster\+::callback. 
+
+This callback is created from generic object that can be \char`\"{}called\char`\"{} i.\+e. a class with operator() or callback pointer that has same signature as the callback.
+
+See\+: {\tt http\+://www.\+boost.\+org/doc/html/function.\+html}
+
+Notes\+:
+
+
+\begin{DoxyItemize}
+\item this code is not taken from Boost and has slightly different interface.
+\item as most of compilers do not support Variadic templates yet, this class is explicitly specialized for Params of size 0 to 8. So maximal amout of parameters that can be used is 8. 
+\end{DoxyItemize}
+
+\subsection{Member Typedef Documentation}
+\index{booster\+::callback$<$ Result(\+Params...)$>$@{booster\+::callback$<$ Result(\+Params...)$>$}!pointer\+\_\+type@{pointer\+\_\+type}}
+\index{pointer\+\_\+type@{pointer\+\_\+type}!booster\+::callback$<$ Result(\+Params...)$>$@{booster\+::callback$<$ Result(\+Params...)$>$}}
+\subsubsection[{pointer\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ typedef {\bf intrusive\+\_\+ptr}$<${\bf callable\+\_\+type}$>$ {\bf booster\+::callback}$<$ Result(Params...)$>$\+::{\bf pointer\+\_\+type}}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a014c509ca6bb999aff7512804cfba635}
+Pointer to callable object
+
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\+::callback$<$ Result(\+Params...)$>$@{booster\+::callback$<$ Result(\+Params...)$>$}!callback@{callback}}
+\index{callback@{callback}!booster\+::callback$<$ Result(\+Params...)$>$@{booster\+::callback$<$ Result(\+Params...)$>$}}
+\subsubsection[{callback()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf booster\+::callback}$<$ Result(Params...)$>$\+::{\bf callback} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a53778f82188d5ce241ac777e4b67830c}
+Default constructor, creates an empty callbacks 
+
+\subsection{Member Function Documentation}
+\index{booster\+::callback$<$ Result(\+Params...)$>$@{booster\+::callback$<$ Result(\+Params...)$>$}!empty@{empty}}
+\index{empty@{empty}!booster\+::callback$<$ Result(\+Params...)$>$@{booster\+::callback$<$ Result(\+Params...)$>$}}
+\subsubsection[{empty() const }]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ bool {\bf booster\+::callback}$<$ Result(Params...)$>$\+::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a602d1091621c7942529205fe562142c2}
+Return true if the callback is empty \index{booster\+::callback$<$ Result(\+Params...)$>$@{booster\+::callback$<$ Result(\+Params...)$>$}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!booster\+::callback$<$ Result(\+Params...)$>$@{booster\+::callback$<$ Result(\+Params...)$>$}}
+\subsubsection[{operator bool() const }]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf booster\+::callback}$<$ Result(Params...)$>$\+::operator bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a1302b4d05c5e9df392664dd7ff5ae437}
+Returns true if the callback is not empty 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+booster/callback.\+h\end{DoxyCompactItemize}

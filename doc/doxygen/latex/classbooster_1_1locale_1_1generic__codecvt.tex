@@ -1,0 +1,117 @@
+\section{booster\+:\+:locale\+:\+:generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, Char\+Size $>$ Class Template Reference}
+\label{classbooster_1_1locale_1_1generic__codecvt}\index{booster\+::locale\+::generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, Char\+Size $>$@{booster\+::locale\+::generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, Char\+Size $>$}}
+
+
+Geneneric generic codecvt facet, various stateless encodings to U\+T\+F-\/16 and U\+T\+F-\/32 using wchar\+\_\+t, char32\+\_\+t and char16\+\_\+t.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/generic\+\_\+codecvt.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Char\+Type, typename Codecvt\+Impl, int Char\+Size = sizeof(\+Char\+Type)$>$\\*
+class booster\+::locale\+::generic\+\_\+codecvt$<$ Char\+Type, Codecvt\+Impl, Char\+Size $>$}
+
+Geneneric generic codecvt facet, various stateless encodings to U\+T\+F-\/16 and U\+T\+F-\/32 using wchar\+\_\+t, char32\+\_\+t and char16\+\_\+t. 
+
+Implementations should dervide from this class defining itself as Codecvt\+Impl and provide following members
+
+
+\begin{DoxyItemize}
+\item {\ttfamily state\+\_\+type} -\/ a type of special object that allows to store intermediate cached data, for example {\ttfamily iconv\+\_\+t} descriptor
+\item {\ttfamily state\+\_\+type initial\+\_\+state(generic\+\_\+codecvt\+\_\+base\+::initial\+\_\+convertion\+\_\+state direction) const} -\/ member function that creates initial state
+\item {\ttfamily int max\+\_\+encoding\+\_\+length() const} -\/ a maximal length that one Unicode code point is represented, for U\+T\+F-\/8 for example it is 4 from I\+S\+O-\/8859-\/1 it is 1
+\item {\ttfamily \doxyref{utf\+::code\+\_\+point}{p.}{namespacebooster_1_1locale_1_1utf_a99fa30e51629ed1d20e5989b9f36effc} to\+\_\+unicode(state\+\_\+type \&state,char const $\ast$\&begin,char const $\ast$end)} -\/ extract first code point from the text in range [begin,end), in case of success begin would point to the next character sequence to be encoded to next code point, in case of incomplete sequence -\/ \doxyref{utf\+::incomplete}{p.}{namespacebooster_1_1locale_1_1utf_acdeb3c57cea57cdfa1d9af057253621a} shell be returned, and in case of invalid input sequence \doxyref{utf\+::illegal}{p.}{namespacebooster_1_1locale_1_1utf_ab35dbcade4df8d0f26cc47ab9b72bb61} shell be returned and begin would remain unmodified
+\item {\ttfamily \doxyref{utf\+::code\+\_\+point}{p.}{namespacebooster_1_1locale_1_1utf_a99fa30e51629ed1d20e5989b9f36effc} from\+\_\+unicode(state\+\_\+type \&state,utf\+::code\+\_\+point u,char $\ast$begin,char const $\ast$end)} -\/ convert a unicode code point {\ttfamily u} into a character seqnece at [begin,end). Return the length of the sequence in case of success, \doxyref{utf\+::incomplete}{p.}{namespacebooster_1_1locale_1_1utf_acdeb3c57cea57cdfa1d9af057253621a} in case of not enough room to encode the code point of \doxyref{utf\+::illegal}{p.}{namespacebooster_1_1locale_1_1utf_ab35dbcade4df8d0f26cc47ab9b72bb61} in case conversion can not be performed
+\end{DoxyItemize}
+
+For example implementaion of codecvt for latin1/\+I\+S\+O-\/8859-\/1 character set
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{template}<\textcolor{keyword}{typename} CharType>
+\textcolor{keyword}{class }latin1\_codecvt :boost::locale::generic\_codecvt<CharType,latin1\_codecvt<CharType> > 
+\{
+\textcolor{keyword}{public}:
+   
+    \textcolor{comment}{/* Standard codecvt constructor */} 
+    latin1\_codecvt(\textcolor{keywordtype}{size\_t} refs = 0) : boost::locale::generic\_codecvt<CharType,latin1\_codecvt<CharType> >(
+      refs) 
+    \{
+    \}
+
+    \textcolor{comment}{/* State is unused but required by generic\_codecvt */}
+    \textcolor{keyword}{struct }state\_type \{\};
+
+    state\_type initial\_state(generic_codecvt_base::initial_convertion_state \textcolor{comment}{/*unused*/})\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        \textcolor{keywordflow}{return} state\_type();
+    \}
+    
+    \textcolor{keywordtype}{int} max\_encoding\_length()\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        \textcolor{keywordflow}{return} 1;
+    \}
+
+    boost::locale::utf::code\_point to\_unicode(state\_type &,\textcolor{keywordtype}{char} \textcolor{keyword}{const} *&begin,\textcolor{keywordtype}{char} \textcolor{keyword}{const} *end)\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+       \textcolor{keywordflow}{if}(begin == end)
+          \textcolor{keywordflow}{return} boost::locale::utf::incomplete;
+       \textcolor{keywordflow}{return} *begin++; 
+    \}
+
+    boost::locale::utf::code\_point from\_unicode(state\_type &,boost::locale::utf::code\_point u,\textcolor{keywordtype}{char} *begin,\textcolor{keywordtype}{
+      char} \textcolor{keyword}{const} *end)\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+       \textcolor{keywordflow}{if}(u >= 256)
+          \textcolor{keywordflow}{return} boost::locale::utf::illegal;
+       \textcolor{keywordflow}{if}(begin == end)
+          \textcolor{keywordflow}{return} boost::locale::utf::incomplete;
+       *begin = u;
+       \textcolor{keywordflow}{return} 1; 
+    \}
+\};
+\end{DoxyCode}
+
+
+When external tools used for encoding conversion, the {\ttfamily state\+\_\+type} is useful to save objects used for conversions. For example, icu\+::\+U\+Converter can be saved in such a state for an efficient use\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{template}<\textcolor{keyword}{typename} CharType>
+\textcolor{keyword}{class }icu\_codecvt :boost::locale::generic\_codecvt<CharType,icu\_codecvt<CharType> > 
+\{
+\textcolor{keyword}{public}:
+   
+    \textcolor{comment}{/* Standard codecvt constructor */} 
+    icu\_codecvt(std::string \textcolor{keyword}{const} &name,refs = 0) : 
+        boost::locale::generic\_codecvt<CharType,latin1\_codecvt<CharType> >(refs)
+    \{ ... \}
+
+    \textcolor{comment}{/* State is unused but required by generic\_codecvt */}
+    \textcolor{keyword}{struct }std::unique\_ptr<UConverter,void (*)(UConverter*)> state\_type;
+
+    state\_type &&initial\_state(generic_codecvt_base::initial_convertion_state \textcolor{comment}{/*unused*/})\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        UErrorCode err = U\_ZERO\_ERROR;
+        state\_type ptr(ucnv\_safeClone(converter\_,0,0,&err,ucnv\_close);
+        \textcolor{keywordflow}{return} std::move(ptr);
+    \}
+    
+    boost::locale::utf::code\_point to\_unicode(state\_type &ptr,\textcolor{keywordtype}{char} \textcolor{keyword}{const} *&begin,\textcolor{keywordtype}{char} \textcolor{keyword}{const} *end)\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        UErrorCode err = U\_ZERO\_ERROR;
+        boost::locale::utf::code\_point cp = ucnv\_getNextUChar(ptr.get(),&begin,end,&err);
+        ...
+    \}
+    ...
+\};
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+booster/locale/generic\+\_\+codecvt.\+h\end{DoxyCompactItemize}

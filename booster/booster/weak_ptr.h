@@ -1,0 +1,4 @@
+#ifndef BOOSTER_SMART_PTR_WEAK_PTR_HPP_INCLUDED
+#define BOOSTER_SMART_PTR_WEAK_PTR_HPP_INCLUDED
+#include <booster/memory_inc.h>
+#endif  // #ifndef BOOST_SMART_PTR_WEAK_PTR_HPP_INCLUDED
